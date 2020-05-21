@@ -29,13 +29,13 @@ class App extends Component {
   }
 
   addReservation = async (reservation) => {
-    // fetch('http://localhost:3001/api/v1/reservations', {
-    //   method: "POST",
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(reservation)
-    // })
+    fetch('http://localhost:3001/api/v1/reservations', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reservation)
+    })
     await this.setState({ reservations: [...this.state.reservations, reservation]})
   }
 
