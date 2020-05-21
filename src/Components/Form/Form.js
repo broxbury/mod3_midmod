@@ -20,7 +20,8 @@ export default class Form extends React.Component {
   }
 
   updateNumber = (e) => {
-    this.setState({ number: e.target.value })
+    let number = Number(e.target.value)
+    this.setState({ number: number })
   }
 
   updateTime = (e) => {
@@ -32,7 +33,7 @@ export default class Form extends React.Component {
     e.preventDefault()
     this.props.addReservation(this.state)
     
-    document.querySelectorAll('date-input').forEach(input => input.value = '')
+    document.querySelectorAll('input').forEach(input => input.value = '')
   }
 
   render() {

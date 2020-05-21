@@ -2,7 +2,7 @@ import React from 'react';
 import './ReservationCard.css';
 
 const ReservationCard = (props) => {
-console.log(props)
+
   return (
     <>
       <section className='res-card'>

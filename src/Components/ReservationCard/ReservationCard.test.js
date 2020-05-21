@@ -25,7 +25,7 @@ describe('ReservationCard', () => {
 
     const name = getByText('Name: Christie')
     const date = getByText('Date: 12/29')
-    const time = getByText('Time: 7:00')
+    const time = getByText('Reservation Time: 7:00')
 
  
     expect(name).toBeInTheDocument();
