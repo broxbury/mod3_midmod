@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReservationCard from '../Components/ReservationCard/ReservationCard';
+import Form from '../Components/Form/Form'
 
 class App extends Component {
   constructor() {
@@ -26,15 +28,23 @@ class App extends Component {
     })
   }
 
+  addReservation = async (reservation) => {
+    await this.setState({ reservations: [...this.state.reservations, reservation]})
+    
+  }
+
   render() {
+    const reservationsToDisplay = this.state.reservations.map(reservation => {
+      return <ReservationCard reservation={reservation} key={reservation.id}/>
+    })
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+          <Form addReservation={this.addReservation} />
         </div>
         <div className='resy-container'>
-          
+          {reservationsToDisplay}
         </div>
       </div>
     )
